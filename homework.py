@@ -141,6 +141,8 @@ def read_package(workout_type: str, data: float) -> Training:
     if workout_type in training_dict:
         workout = training_dict[workout_type](*data)
         return workout
+    elif workout_type not in training_dict:
+        raise ValueError('Данной тренировки нет в словаре')
 
 
 def main(training: Training) -> None:
