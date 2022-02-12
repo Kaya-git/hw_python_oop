@@ -1,3 +1,4 @@
+from ast import Str
 from dataclasses import dataclass, asdict
 
 
@@ -17,7 +18,7 @@ class InfoMessage:
                         ' Ср. скорость: {speed:.3f} км/ч;'
                         ' Потрачено ккал: {calories:.3f} .')
 
-    def get_message(self):
+    def get_message(self) -> str:
         return self.INFO_GET_MESSAGE.format(**asdict(self))
 
 
