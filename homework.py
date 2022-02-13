@@ -1,4 +1,5 @@
 from dataclasses import dataclass, asdict
+from typing import List, Union
 
 
 @dataclass
@@ -137,7 +138,7 @@ class Swimming(Training):
         return calories_ccal
 
 
-def read_package(workout_type: str, data: float) -> Training:
+def read_package(workout_type: str, data: List[Union[int, float]]) -> Training:
     """Прочитать данные полученные от датчиков."""
 
     training_type: dict = {'RUN': Running,
